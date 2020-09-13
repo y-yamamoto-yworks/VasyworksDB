@@ -1,0 +1,5 @@
+"id","name","unit","priority","is_stopped"
+"0","不明","","99","FALSE"
+"1","無し","","1","FALSE"
+"2","金額","円","2","FALSE"
+"3","賃料nヶ月","ヶ月","3","FALSE"

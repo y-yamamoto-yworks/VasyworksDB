@@ -1,0 +1,8 @@
+"id","name","priority","is_ok","is_stopped"
+"0","不明","99","FALSE","FALSE"
+"10","室内設置可","10","TRUE","FALSE"
+"20","室外設置可","20","TRUE","FALSE"
+"30","設置可","30","TRUE","FALSE"
+"40","設置不可","40","FALSE","FALSE"
+"41","共用洗濯機","41","FALSE","FALSE"
+"42","コインランドリー","42","FALSE","FALSE"

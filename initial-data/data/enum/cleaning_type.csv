@@ -1,0 +1,8 @@
+"id","name","priority","is_paid","is_stopped"
+"0","不明","99","FALSE","FALSE"
+"1","無し","1","FALSE","FALSE"
+"2","契約時支払","2","TRUE","FALSE"
+"3","退去時支払","3","TRUE","FALSE"
+"4","敷金相殺","4","TRUE","FALSE"
+"5","保証金相殺","5","TRUE","FALSE"
+"6","実費","6","TRUE","FALSE"

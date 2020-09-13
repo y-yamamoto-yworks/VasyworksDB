@@ -1,0 +1,7 @@
+"id","name","priority","is_specified","is_stopped"
+"0","不明","99","FALSE","FALSE"
+"1","自社指定","1","TRUE","FALSE"
+"2","オーナー指定","2","TRUE","FALSE"
+"3","推奨","3","FALSE","FALSE"
+"4","相談","4","FALSE","FALSE"
+"9","指定無し","9","FALSE","FALSE"

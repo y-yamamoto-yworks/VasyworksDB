@@ -1,0 +1,5 @@
+"id","name","priority","is_stopped"
+"0","不明","99","FALSE"
+"10","有り（ADと別）","10","FALSE"
+"11","有り（ADに込み）","11","FALSE"
+"20","無し","20","FALSE"

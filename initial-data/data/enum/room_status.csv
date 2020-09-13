@@ -1,0 +1,7 @@
+"id","name","priority","for_rent","is_pending","will_be_canceled","is_stopped"
+"0","不明","99","FALSE","FALSE","FALSE","FALSE"
+"1","空室","1","TRUE","FALSE","FALSE","FALSE"
+"2","契約済","2","FALSE","FALSE","FALSE","FALSE"
+"3","入居中","3","FALSE","FALSE","FALSE","FALSE"
+"4","解約予定","4","TRUE","FALSE","TRUE","FALSE"
+"5","保留中","5","FALSE","TRUE","FALSE","FALSE"

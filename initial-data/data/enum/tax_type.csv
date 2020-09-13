@@ -1,0 +1,5 @@
+"id","name","priority","is_stopped"
+"0","不明","9","FALSE"
+"1","税別","1","FALSE"
+"2","税込","2","FALSE"
+"3","非課税","3","FALSE"

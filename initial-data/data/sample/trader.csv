@@ -1,0 +1,2 @@
+"id","trader_group_id","trader_name","trader_kana","no_trading","no_portal","created_at","created_user_id","updated_at","updated_user_id","is_stopped","is_deleted"
+"0","0","未登録","ミトウロク","TRUE","TRUE","2020-01-01 12:00:00","1","2020-01-01 12:00:00","1","TRUE","FALSE"
