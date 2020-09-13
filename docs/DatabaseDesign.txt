@@ -1,0 +1,1622 @@
+【Vasyworks データベース資料】
+Copyright (C) 2020 Yasuhiro Yamamoto
+
+<< TableName: ad_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+unit	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: allow_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: area >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+kana	char	100
+pref_id	int	
+lat	float	
+lng	float	
+is_stopped	bool	
+
+
+<< TableName: arrival_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: auth_user >>
+[ColumnName]	[DataType]	[Length]
+id	auto
+password	char
+last_login	datetime
+username	char
+first_name	char
+last_name	char
+staff_id	int
+email	char
+is_company	bool
+is_company_admin	bool
+is_superuser	bool
+is_staff	bool
+is_active	bool
+date_joined	datetime
+
+
+<< TableName: auth_vacancy_level >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+level	int	
+is_stopped	bool	
+
+
+<< TableName: auth_vacancy_user >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+password	char	128
+last_login	datetime	
+username	char	150
+display_name	char	100
+email	char	254
+is_superuser	bool	
+is_staff	bool	
+is_active	bool	
+is_company	bool	
+level_id	int	
+allow_org_image	bool	
+trader_name	char	100
+trader_department_name	char	100
+trader_department_tel	char	20
+trader_department_address	char	255
+note	char	255
+date_joined	datetime	
+
+
+<< TableName: balcony_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: bath_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: bike_parking_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_exist	bool	
+is_paid	bool	
+is_stopped	bool	
+
+
+<< TableName: building >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+oid	char	50
+file_oid	char	50
+building_code	char	20
+building_name	char	100
+building_kana	char	100
+buildig_old_name	char	100
+postal_code	char	10
+pref_id	int	
+city_id	int	
+town_address	char	255
+town_name	char	100
+house_no	char	100
+building_no	char	100
+lat	float	
+lng	float	
+area_id	int	
+elementary_school_id	int	
+elementary_school_distance	int	
+junior_high_school_id	int	
+junior_high_school_distance	int	
+around_note	char	255
+management_type_id	int	
+department_id	int	
+staff_id1	int	
+staff_id2	int	
+priority_level	int	
+agency_department_id	int	
+owner_id	int	
+owner_note	char	255
+trader_id	int	
+register_address	char	255
+register_name	char	255
+register_building_no	char	255
+register_no	char	50
+arrival_type_id1	int	
+station_id1	int	
+station_time1	int	
+bus_stop1	char	50
+bus_stop_time1	int	
+arrival_type_id2	int	
+station_id2	int	
+station_time2	int	
+bus_stop2	char	50
+bus_stop_time2	int	
+arrival_type_id3	int	
+station_id3	int	
+station_time3	int	
+bus_stop3	char	50
+bus_stop_time3	int	
+building_type_id	int	
+building_type_comment	char	100
+structure_id	int	
+structure_comment	char	100
+building_rooms	int	
+building_floors	int	
+building_undergrounds	int	
+build_year	int	
+build_month	int	
+bike_parking_type_id	int	
+with_bike_parking_roof	bool	
+bike_parking_fee_lower	int	
+bike_parking_fee_upper	int	
+bike_parking_fee_tax_type_id	int	
+bike_parking_note	char	255
+garage_type_id	int	
+garage_status_id	int	
+garage_distance	int	
+garage_fee_lower	int	
+garage_fee_upper	int	
+garage_fee_tax_type_id	int	
+garage_charge_lower	int	
+garage_charge_upper	int	
+garage_charge_tax_type_id	int	
+garage_note	char	255
+building_management_company	char	100
+building_management_address	char	255
+building_management_tel	char	20
+building_management_no	char	50
+building_management_note	char	255
+agreement_existence_id	int	
+apartment_manager_comment	char	100
+auto_lock_no	char	20
+is_hidden_vacancy	bool	
+is_vacancy_recommend	bool	
+vacancy_rent_comment	char	100
+vacancy_condo_fees_comment	char	100
+vacancy_water_comment	char	100
+vacancy_electric_comment	char	100
+vacancy_gas_comment	char	100
+vacancy_internet_comment	char	100
+vacancy_cancel_notice_comment	char	100
+vacancy_short_cancel_comment	char	100
+vacancy_payment_comment	char	100
+vacancy_guarantee_comment	char	100
+vacancy_insurance_comment	char	100
+vacancy_guarantor_limit_comment	char	100
+vacancy_document_price_comment	char	100
+vacancy_renewal_fee_comment	char	100
+vacancy_renewal_charge_comment	char	100
+vacancy_auto_lock_comment	char	100
+vacancy_security_comment	char	100
+vacancy_bike_parking_comment	char	100
+vacancy_garage_comment	char	100
+vacancy_cleaning_comment	char	100
+vacancy_change_lock_comment	char	100
+vacancy_portal_note	char	255
+vacancy_catch_copy	char	100
+vacancy_appeal	char	255
+vacancy_note	text	2000
+is_hidden_web	bool	
+web_catch_copy	char	100
+web_appeal	char	255
+web_note	text	2000
+tenant_note	text	2000
+garbage_note	text	2000
+private_note	text	2000
+management_note	text	2000
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: building_facility >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+building_id	int	
+facility_id	int	
+facility_name	char	100
+distance	int	
+priority	int	
+building_picture_id	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: building_file >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+building_id	int	
+file_name	char	255
+cache_name	char	255
+file_title	char	255
+is_publish_web	bool	
+is_publish_vacancy	bool	
+comment	char	50
+note	char	255
+priority	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: building_garage >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+building_id	int	
+garage_name	char	100
+garage_fee	int	
+garage_fee_tax_type_id	int	
+garage_charge	int	
+garage_charge_tax_type_id	int	
+garage_deposit	int	
+garage_deposit_tax_type_id	int	
+certification_fee	int	
+certification_fee_tax_type_id	int	
+initial_cost_name1	char	100
+initial_cost1	int	
+initial_cost_tax_type_id1	int	
+initial_cost_name2	char	100
+initial_cost2	int	
+initial_cost_tax_type_id2	int	
+initial_cost_name3	char	100
+initial_cost3	int	
+initial_cost_tax_type_id3	int	
+garage_status_id	int	
+allow_no_room	bool	
+width	decimal	10.2
+length	decimal	10.2
+height	decimal	10.2
+comment	char	100
+note	char	255
+priority	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: building_landmark >>
+[ColumnName]	[DataType]	[Length]
+id	auto
+building_id	int
+landmark_id	int
+distance	int
+priority	int
+created_at	datetime
+created_user_id	int
+updated_at	datetime
+updated_user_id	int
+is_deleted	bool
+
+
+<< TableName: building_movie >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+building_id	int	
+file_name	char	255
+cache_name	char	255
+movie_type_id	int	
+is_publish_web	bool	
+is_publish_vacancy	bool	
+comment	char	50
+note	char	255
+priority	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: building_panorama >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+building_id	int	
+file_name	char	255
+cache_name	char	255
+panorama_type_id	int	
+is_publish_web	bool	
+is_publish_vacancy	bool	
+comment	char	50
+note	char	255
+priority	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: building_picture >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+building_id	int	
+file_name	char	255
+cache_name_thumb	char	255
+cache_name_s	char	255
+cache_name_m	char	255
+cache_name_l	char	255
+cache_name_org	char	255
+picture_type_id	int	
+is_publish_web	bool	
+is_publish_vacancy	bool	
+comment	char	50
+note	char	255
+priority	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: building_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_residential	bool	
+is_building	bool	
+is_stopped	bool	
+
+
+<< TableName: city >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+pref_id	int	
+priority	int	
+lat	float	
+lng	float	
+is_trading_area	bool	
+is_stopped	bool	
+
+
+<< TableName: city_area >>
+[ColumnName]	[DataType]	[Length]
+id	int
+city_id	int
+area_id	int
+is_stopped	bool
+
+
+<< TableName: city_elementary_school >>
+[ColumnName]	[DataType]	[Length]
+id	int
+city_id	int
+school_id	int
+is_stopped	bool
+
+
+<< TableName: city_junior_high_school >>
+[ColumnName]	[DataType]	[Length]
+id	int
+city_id	int
+school_id	int
+is_stopped	bool
+
+
+<< TableName: cleaning_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_paid	bool	
+is_stopped	bool	
+
+
+<< TableName: company >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+api_key	char	50
+internal_api_key	char	50
+company_name	char	100
+company_kana	char	100
+shop_name	char	100
+postal_code	char	10
+address	char	255
+tel	char	20
+fax	char	20
+mail	char	100
+agency_no	char	50
+pm_no	char	50
+water_mark	char	50
+is_default	bool	
+
+
+<< TableName: condo_fees_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: department >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+department_name	char	100
+priority	int	
+postal_code	char	10
+address	char	255
+tel	char	20
+fax	char	20
+mail	char	100
+is_publish_vacancy	bool	
+note	text	2000
+created_at	datetime	
+is_stopped	bool	
+is_deleted	bool	
+
+<< TableName: deposit_notation >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+unit	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: deposit_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+coefficient	int	
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: direction >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: document_file >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+file_name	char	255
+cache_name	char	255
+file_title	char	255
+is_publish_web	bool	
+is_publish_vacancy	bool	
+comment	char	50
+note	char	255
+priority	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: electric_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: elementary_school >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+pref_id	int	
+name	char	50
+kana	char	100
+lat	float	
+lng	float	
+is_stopped	bool	
+
+
+<< TableName: equipment >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_residence	bool	
+is_stopped	bool	
+
+
+<< TableName: equipment_category >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	100
+short_name	char	50
+category_id	int	
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: existence >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: facility >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: free_rent_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: garage_status >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: garage_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_exist	bool	
+is_free	bool	
+is_stopped	bool	
+
+
+<< TableName: gas_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: guarantee_company >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: guarantee_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: insurance_company >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: insurance_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_specified	bool	
+is_stopped	bool	
+
+
+<< TableName: internet_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: junior_high_school >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+pref_id	int	
+name	char	50
+kana	char	100
+lat	float	
+lng	float	
+is_stopped	bool	
+
+
+<< TableName: key_money_notation >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+unit	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: key_money_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+coefficient	int	
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: kitchen_range_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: kitchen_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+notation	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: landmark >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+landmark_type_id	int	
+name	char	50
+kana	char	100
+short_name	char	50
+lat	float	
+lng	float	
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: landmark_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: layout_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+room_count	int	
+category_id	int	
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: layout_type_category >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_searchable	bool	
+is_stopped	bool	
+
+
+<< TableName: management_info >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+information	char	255
+link_url	char	200
+start_date	char	10
+end_date	char	10
+is_emphasized	bool	
+priority	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: management_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_own	bool	
+is_entrusted	bool	
+is_condo_management	bool	
+is_stopped	bool	
+
+
+<< TableName: month_day >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+from_day	int	
+to_day	int	
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: movie_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_building	bool	
+is_room	bool	
+is_stopped	bool	
+
+
+<< TableName: owner >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+owner_name	char	255
+owner_kana	char	255
+is_corporation	bool	
+corporation_owner_name	char	255
+postal_code	char	10
+address	char	255
+tel1	char	20
+tel2	char	20
+fax	char	20
+mail	char	100
+staff_id	int	
+note	text	2000
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_stopped	bool	
+is_deleted	bool	
+
+
+<< TableName: owner_fee_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: panorama_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_building	bool	
+is_room	bool	
+is_stopped	bool	
+
+
+<< TableName: payment_fee_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: payment_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: pet_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_ok	bool	
+is_stopped	bool	
+
+
+<< TableName: picture_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_building	bool	
+is_room	bool	
+is_building_exterior	bool	
+is_layout	bool	
+is_stopped	bool	
+
+
+<< TableName: postal_code >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+postal_code	char	20
+pref_id	int	
+city_id	int	
+pref_name	char	50
+city_name	char	50
+town_name	char	100
+pref_kana	char	50
+city_kana	char	50
+town_kana	char	100
+
+
+<< TableName: pref >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_trading_area	bool	
+
+
+<< TableName: railway >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+short_name	char	50
+priority	int	
+is_trading	bool	
+is_stopped	bool	
+
+
+<< TableName: renewal_fee_notation >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+header	char	50
+unit	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: rental_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+short_name	char	50
+priority	int	
+is_residential	bool	
+is_non_residential	bool	
+is_land	bool	
+is_limited_rent	bool	
+is_sublease	bool	
+is_own	bool	
+is_stopped	bool	
+
+
+<< TableName: room >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+oid	char	50
+building_id	int	
+room_no	char	20
+room_floor	int	
+room_auth_level_id	int	
+rental_type_id	int	
+is_sublease	bool	
+is_condo_management	bool	
+condo_owner_id	int	
+is_entrusted	bool	
+condo_trader_id	int	
+room_status_id	int	
+vacancy_status_id	int	
+vacancy_status_note	text	2000
+live_start_year	int	
+live_start_month	int	
+live_start_day_id	int	
+live_start_note	char	255
+cancel_scheduled_year	int	
+cancel_scheduled_month	int	
+cancel_scheduled_day_id	int	
+cancel_scheduled_note	char	255
+is_publish_vacancy	bool	
+vacancy_start_date	char	10
+vacancy_end_date	char	10
+vacancy_catch_copy	char	100
+vacancy_appeal	char	255
+vacancy_note	text	2000
+pending_trader_name	char	100
+pending_start_date	char	10
+pending_end_date	char	10
+pending_note	char	255
+is_publish_web	bool	
+web_catch_copy	char	100
+web_appeal	char	255
+web_note	text	2000
+layout_type_id	int	
+western_style_room1	decimal	3.2
+western_style_room2	decimal	3.2
+western_style_room3	decimal	3.2
+western_style_room4	decimal	3.2
+western_style_room5	decimal	3.2
+western_style_room6	decimal	3.2
+western_style_room7	decimal	3.2
+western_style_room8	decimal	3.2
+western_style_room9	decimal	3.2
+western_style_room10	decimal	3.2
+japanese_style_room1	decimal	3.2
+japanese_style_room2	decimal	3.2
+japanese_style_room3	decimal	3.2
+japanese_style_room4	decimal	3.2
+japanese_style_room5	decimal	3.2
+japanese_style_room6	decimal	3.2
+japanese_style_room7	decimal	3.2
+japanese_style_room8	decimal	3.2
+japanese_style_room9	decimal	3.2
+japanese_style_room10	decimal	3.2
+kitchen_type_id1	int	
+kitchen1	decimal	3.2
+kitchen_type_id2	int	
+kitchen2	decimal	3.2
+kitchen_type_id3	int	
+kitchen3	decimal	3.2
+store_room1	decimal	3.2
+store_room2	decimal	3.2
+store_room3	decimal	3.2
+loft1	decimal	3.2
+loft2	decimal	3.2
+sun_room1	decimal	3.2
+sun_room2	decimal	3.2
+layout_note	char	255
+room_area	decimal	3.2
+direction_id	int	
+balcony_type_id	int	
+balcony_area	decimal	3.2
+rent	int	
+rent_upper	int	
+trader_rent	int	
+rent_tax_type_id	int	
+rent_hidden	bool	
+condo_fees_type_id	int	
+condo_fees	int	
+condo_fees_tax_type_id	int	
+water_cost_type_id	int	
+water_cost	int	
+water_cost_tax_type_id	int	
+water_check_type_id	int	
+payment_type_id	int	
+payment_fee_type_id	int	
+payment_fee	int	
+payment_fee_tax_type_id	int	
+monthly_cost_name1	char	100
+monthly_cost1	int	
+monthly_cost_tax_type_id1	int	
+monthly_cost_name2	char	100
+monthly_cost2	int	
+monthly_cost_tax_type_id2	int	
+monthly_cost_name3	char	100
+monthly_cost3	int	
+monthly_cost_tax_type_id3	int	
+monthly_cost_name4	char	100
+monthly_cost4	int	
+monthly_cost_tax_type_id4	int	
+monthly_cost_name5	char	100
+monthly_cost5	int	
+monthly_cost_tax_type_id5	int	
+monthly_cost_name6	char	100
+monthly_cost6	int	
+monthly_cost_tax_type_id6	int	
+monthly_cost_name7	char	100
+monthly_cost7	int	
+monthly_cost_tax_type_id7	int	
+monthly_cost_name8	char	100
+monthly_cost8	int	
+monthly_cost_tax_type_id8	int	
+monthly_cost_name9	char	100
+monthly_cost9	int	
+monthly_cost_tax_type_id9	int	
+monthly_cost_name10	char	100
+monthly_cost10	int	
+monthly_cost_tax_type_id10	int	
+monthly_cost_note	text	2000
+deposit_type_id1	int	
+deposit_notation_id1	int	
+deposit_value1	decimal	10.2
+deposit_tax_type_id1	int	
+deposit_comment1	char	100
+deposit_type_id2	int	
+deposit_notation_id2	int	
+deposit_value2	decimal	10.2
+deposit_tax_type_id2	int	
+deposit_comment2	char	100
+key_money_type_id1	int	
+key_money_notation_id1	int	
+key_money_value1	decimal	10.2
+key_money_tax_type_id1	int	
+key_money_comment1	char	100
+key_money_type_id2	int	
+key_money_notation_id2	int	
+key_money_value2	decimal	10.2
+key_money_tax_type_id2	int	
+key_money_comment2	char	100
+contract_years	int	
+contract_months	int	
+renewal_fee_notation_id	int	
+renewal_fee_value	decimal	10.2
+renewal_fee_tax_type_id	int	
+renewal_charge_existence_id	int	
+renewal_charge	int	
+renewal_charge_tax_type_id	int	
+is_auto_renewal	bool	
+renewal_note	char	255
+recontract_fee_existence_id	int	
+recontract_fee	int	
+recontract_fee_tax_type_id	int	
+recontract_note	char	255
+insurance_type_id	int	
+insurance_company	char	100
+insurance_years	int	
+insurance_fee	int	
+insurance_fee_tax_type_id	int	
+guarantee_type_id	int	
+guarantee_company	char	100
+guarantee_fee	char	255
+document_cost_existence_id	int	
+document_cost	int	
+document_cost_tax_type_id	int	
+document_cost_comment	char	100
+key_change_cost_existence_id	int	
+key_change_cost	int	
+key_change_cost_tax_type_id	int	
+key_change_comment	char	100
+initial_cost_name1	char	100
+initial_cost1	int	
+initial_cost_tax_type_id1	int	
+initial_cost_name2	char	100
+initial_cost2	int	
+initial_cost_tax_type_id2	int	
+initial_cost_name3	char	100
+initial_cost3	int	
+initial_cost_tax_type_id3	int	
+initial_cost_name4	char	100
+initial_cost4	int	
+initial_cost_tax_type_id4	int	
+initial_cost_name5	char	100
+initial_cost5	int	
+initial_cost_tax_type_id5	int	
+initial_cost_name6	char	100
+initial_cost6	int	
+initial_cost_tax_type_id6	int	
+initial_cost_name7	char	100
+initial_cost7	int	
+initial_cost_tax_type_id7	int	
+initial_cost_name8	char	100
+initial_cost8	int	
+initial_cost_tax_type_id8	int	
+initial_cost_name9	char	100
+initial_cost9	int	
+initial_cost_tax_type_id9	int	
+initial_cost_name10	char	100
+initial_cost10	int	
+initial_cost_tax_type_id10	int	
+initial_cost_note	text	2000
+free_rent_type_id	int	
+free_rent_months	int	
+free_rent_limit_year	int	
+free_rent_limit_month	int	
+cancel_notice_limit	int	
+cancel_note	char	255
+short_cancel_note	char	255
+cleaning_type_id	int	
+cleaning_cost	int	
+cleaning_cost_tax_type_id	int	
+cleaning_note	char	255
+special_agreement	text	2000
+electric_type_id	int	
+electric_comment	char	100
+gas_type_id	int	
+gas_comment	char	100
+bath_type_id	int	
+bath_comment	char	100
+toilet_type_id	int	
+toilet_comment	char	100
+kitchen_range_type_id	int	
+kitchen_range_comment	char	100
+internet_type_id	int	
+internet_comment	char	100
+washer_type_id	int	
+washer_comment	char	100
+pet_type_id	int	
+pet_comment	char	100
+instrument_type_id	int	
+live_together_type_id	int	
+children_type_id	int	
+share_type_id	int	
+non_japanese_type_id	int	
+only_woman_type_id	int	
+only_man_type_id	int	
+corp_contract_type_id	int	
+student_type_id	int	
+new_student_type_id	int	
+welfare_type_id	int	
+office_use_type_id	int	
+constraint_note	char	255
+reform_comment	char	100
+reform_year	int	
+reform_month	int	
+reform_note	char	255
+trader_publish_type_id	int	
+trader_publish_note	char	255
+trader_portal_type_id	int	
+trader_portal_note	char	255
+ad_type_id	int	
+ad_value	decimal	10.2
+ad_tax_type_id	int	
+trader_ad_type_id	int	
+trader_ad_value	decimal	10.2
+trader_ad_tax_type_id	int	
+owner_fee_type_id	int	
+key_no	char	50
+key_place_note	char	255
+private_note	text	2000
+management_note	text	2000
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: room_auth_level >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+level	int	
+is_stopped	bool	
+
+
+<< TableName: room_equipment >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+building_id	int	
+room_id	int	
+equipment_id	int	
+is_remained	bool	
+note	text	2000
+priority	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: room_movie >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+building_id	int	
+room_id	int	
+file_name	char	255
+cache_name	char	255
+movie_type_id	int	
+is_publish_web	bool	
+is_publish_vacancy	bool	
+comment	char	50
+note	char	255
+priority	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: room_panorama >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+building_id	int	
+room_id	int	
+file_name	char	255
+cache_name	char	255
+panorama_type_id	int	
+is_publish_web	bool	
+is_publish_vacancy	bool	
+comment	char	50
+note	char	255
+priority	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: room_picture >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+building_id	int	
+room_id	int	
+file_name	char	255
+cache_name_thumb	char	255
+cache_name_s	char	255
+cache_name_m	char	255
+cache_name_l	char	255
+cache_name_org	char	255
+picture_type_id	int	
+is_publish_web	bool	
+is_publish_vacancy	bool	
+comment	char	50
+note	char	255
+priority	int	
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_deleted	bool	
+
+
+<< TableName: room_status >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+for_rent	bool	
+is_pending	bool	
+will_be_canceled	bool	
+is_stopped	bool	
+
+
+<< TableName: room_status_log >>
+[ColumnName]	[DataType]	[Length]
+id	auto
+building_id	int
+room_id	int
+room_status_id	int
+last_room_status_id	int
+created_at	datetime
+created_user_id	int
+
+
+<< TableName: room_vacancy_theme >>
+[ColumnName]	[DataType]	[Length]
+id	auto
+building_id	int
+room_id	int
+vacancy_theme_id	int
+created_at	datetime
+created_user_id	int
+updated_at	datetime
+updated_user_id	int
+is_deleted	bool
+
+
+<< TableName: staff >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+department_id	int	
+first_name	char	50
+last_name	char	50
+post_name	char	50
+vacancy_name	char	100
+priority	int	
+tel1	char	20
+tel2	char	20
+mail	char	100
+is_pm_staff	bool	
+is_publish_vacancy	bool	
+created_at	datetime	
+is_stopped	bool	
+is_deleted	bool	
+
+
+<< TableName: station >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+railway_id	int	
+name	char	50
+priority	int	
+is_trading	bool	
+is_stopped	bool	
+
+
+<< TableName: structure >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+short_name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: tax_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: toilet_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: trader >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+trader_group_id	int	
+trader_name	char	255
+trader_kana	char	255
+postal_code	char	10
+address	char	255
+tel1	char	20
+tel2	char	20
+fax	char	20
+mail	char	100
+no_trading	bool	
+no_portal	bool	
+note	text	2000
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_stopped	bool	
+is_deleted	bool	
+
+
+<< TableName: trader_group >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+trader_group_name	char	255
+trader_group_kana	char	255
+note	text	2000
+created_at	datetime	
+created_user_id	int	
+updated_at	datetime	
+updated_user_id	int	
+is_stopped	bool	
+is_deleted	bool	
+
+
+<< TableName: transfer_station >>
+[ColumnName]	[DataType]	[Length]
+id	int
+station_id	int
+transfer_station_id	int
+is_stopped	bool
+
+
+<< TableName: vacancy_input_bike_parking >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_cancel_notice >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_change_lock >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_cleaning >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_document_price >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_electric >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_garage >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_gas >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_guarantee >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_guarantor_limit >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_insurance >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_internet >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_payment >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_renewal_charge >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_portal >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_short_cancel >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_input_water >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+input_contents	char	255
+priority	int	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: vacancy_status >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: vacancy_theme >>
+[ColumnName]	[DataType]	[Length]
+id	auto	
+name	char	50
+title	char	100
+description	char	255
+priority	int	
+room_auth_level_id	int	
+is_publish	bool	
+created_at	datetime	
+is_stopped	bool	
+
+
+<< TableName: washer_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_ok	bool	
+is_stopped	bool	
+
+
+<< TableName: water_check_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
+<< TableName: water_cost_type >>
+[ColumnName]	[DataType]	[Length]
+id	int	
+name	char	50
+priority	int	
+is_stopped	bool	
+
+
