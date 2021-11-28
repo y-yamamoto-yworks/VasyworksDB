@@ -1,0 +1,8 @@
+"id","name","priority","level","is_stopped"
+"0","未指定","99","0","FALSE"
+"1","LV1","1","1","FALSE"
+"2","LV2","2","2","FALSE"
+"3","LV3","3","3","FALSE"
+"4","LV4","4","4","FALSE"
+"5","LV5","5","5","FALSE"
+"9","無制限","9","9","FALSE"

@@ -1,0 +1,43 @@
+【システムユーザ】
+（ルートユーザ）Django Admin用
+ID: root
+PWD: root1234
+is_company: ×
+is_company_admin: ×
+
+
+（システム管理者）
+ID: Administrator
+PWD: guest1234
+is_company: 〇
+is_company_admin: 〇
+
+
+（管理部署管理者ユーザ）
+ID: t-kanri
+PWD: guest1234
+is_company: 〇
+is_company_admin: 〇
+
+
+（管理部署一般ユーザ）
+ID: i-chintai
+PWD: guest1234
+is_company: 〇
+is_company_admin: ×
+
+
+
+【空室情報ユーザ】
+（管理部署用）
+ID: yworks
+PWD: guest1234
+閲覧レベル: 無制限
+
+（仲介業者）
+ID: a-pool
+PWD: guest1234
+閲覧レベル: LV3（通常）
+
+
+

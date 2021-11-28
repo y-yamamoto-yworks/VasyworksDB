@@ -1,0 +1,5 @@
+"id","name","coefficient","priority","is_stopped"
+"0","指定無し","0","0","FALSE"
+"10","敷金","1","10","FALSE"
+"20","保証金","1","20","FALSE"
+"30","預り金","1","30","FALSE"

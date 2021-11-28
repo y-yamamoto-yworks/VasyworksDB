@@ -1,0 +1,7 @@
+"id","name","priority","is_exist","is_free","is_stopped"
+"0","無し","0","FALSE","FALSE","FALSE"
+"1","有料","1","TRUE","FALSE","FALSE"
+"2","近隣確保","2","FALSE","FALSE","FALSE"
+"3","込み","3","TRUE","TRUE","FALSE"
+"4","付き","4","TRUE","TRUE","FALSE"
+"5","無料","5","TRUE","TRUE","FALSE"

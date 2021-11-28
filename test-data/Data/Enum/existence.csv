@@ -1,0 +1,4 @@
+"id","name","priority","is_stopped"
+"0","不明","99","FALSE"
+"1","有り","1","FALSE"
+"2","無し","2","FALSE"

@@ -1,0 +1,5 @@
+"id","name","priority","is_stopped"
+"0","不明","99","FALSE"
+"1","振込","1","FALSE"
+"2","振替","2","FALSE"
+"3","持参","3","FALSE"

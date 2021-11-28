@@ -1,0 +1,7 @@
+"id","name","priority","is_searchable","is_stopped"
+"0","指定無し","99","FALSE","FALSE"
+"10","1R/1K/1DK","10","TRUE","FALSE"
+"20","1LDK/2K/2DK","20","TRUE","FALSE"
+"30","2LKD/3K/3DK","30","TRUE","FALSE"
+"40","3LDK/4K/4DK","40","TRUE","FALSE"
+"50","4LDK以上","50","TRUE","FALSE"

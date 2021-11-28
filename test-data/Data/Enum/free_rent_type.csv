@@ -1,0 +1,4 @@
+"id","name","priority","is_stopped"
+"0","無し","0","FALSE"
+"1","有り（月数指定）","1","FALSE"
+"2","有り（期限月指定）","2","FALSE"

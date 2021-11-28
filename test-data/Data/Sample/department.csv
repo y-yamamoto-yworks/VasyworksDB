@@ -1,0 +1,3 @@
+"id","department_name","priority","is_publish_vacancy","created_at","is_stopped","is_deleted"
+"0","不明","99999","FALSE","2020-01-01 12:00:00","TRUE","FALSE"
+"1","賃貸管理部","100","TRUE","2020-01-01 12:00:00","FALSE","FALSE"

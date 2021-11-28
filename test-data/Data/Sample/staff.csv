@@ -1,0 +1,3 @@
+"id","department_id","first_name","last_name","priority","is_pm_staff","is_publish_vacancy","created_at","is_stopped","is_deleted"
+"0","0","未入力","不明","999999","FALSE","FALSE","2020-01-01 12:00:00","TRUE","FALSE"
+"1","1","管理者","システム","100","TRUE","TRUE","2020-01-01 12:00:00","FALSE","FALSE"

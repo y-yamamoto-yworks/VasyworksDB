@@ -1,0 +1,8 @@
+"id","name","priority","level","is_stopped"
+"0","制限無し","99","0","FALSE"
+"1","LV1以上","1","1","FALSE"
+"2","LV2以上","2","2","FALSE"
+"3","LV3以上","3","3","FALSE"
+"4","LV4以上","4","4","FALSE"
+"5","LV5以上","5","5","FALSE"
+"9","制限MAX","9","9","FALSE"

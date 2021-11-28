@@ -1,0 +1,5 @@
+"id","name","priority","is_stopped"
+"0","不明","99","FALSE"
+"1","徒歩","1","FALSE"
+"2","バス","2","FALSE"
+"3","車","3","FALSE"
