@@ -18,7 +18,7 @@
         # psql -h 192.168.1.10 -U yworks -d rent_db
 2) psqlで下記のコマンドを実行する。
         例:
-        rent_db=# \cd /home/yworks/test-data/sql/Test
+        rent_db=# \cd /home/yworks/test-data/Sql/Test
         rent_db=# \i prepare_test_data.sql
         rent_db=# \q
 
