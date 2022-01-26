@@ -1,0 +1,351 @@
+【利用者別で初期データが必要なテーブル】
+    ■ 利用地域に関するの初期データの準備
+    下記のテーブルの初期データについては、利用者の地域に合わせてCSVファイルを用意してください。
+    ※initial-data/data/kyotoにあるCSVファイルを参考にしてください。
+
+    [対象テーブル]
+    1. 市区町村・エリア
+        city：市区町村 <-- idが0のデータは必須
+        area：エリア <-- idが0のデータは必須
+        city_area：市区町村とエリアの紐付け情報
+        
+        ※市区町村のコードは下記のサイトなどを参考にしてください。
+            e-Statの市区町村名・コード： https://www.e-stat.go.jp/municipalities/cities/areacode
+        
+        ※areaには必要に応じて、市区町村を更に細かく分けたエリアを登録してください。
+          参考となるサイトはありませんので、駅名などをヒントにして利用地域に合わせて登録してください。
+        
+        ※city_areaにはcityのレコードとareaのレコードの関連付けを登録します。
+          対象となる市区町村の中にあるエリアを登録します。
+          空室情報データ管理のシステム内では市区町村を選択すると対象となるエリアを選択することができます。
+          エリアの境界は市区町村に一致させる必要はなく、複数の市区町村にまたがるエリアを登録することも可能です。
+
+    2. 学区
+        elementary_school：小学校区 <-- idが0のデータは必須
+        junior_high_school：中学校区 <-- idが0のデータは必須
+        city_elementary_school：市区町村と小学校区の紐付け情報
+        city_junior_high_school：市区町村と中学校区の紐付け情報
+        
+        ※各利用地域の小学校区、中学校区の情報は市区町村の役所のサイトなどを参考にしてください。
+
+    3. 大学・施設等
+        landmark：ランドマーク（大学・短大・専門学校・施設など） <-- idが0のデータは必須
+        
+        ※参考となるサイトはありませんので、利用地域に合わせて登録してください。
+
+    4. 郵便番号
+        postal_code：郵便番号と住所 <-- idが0のデータは必須
+        
+        ※郵便番号のデータは下記のサイトなどを参考にしてください。
+            郵便局の郵便番号データダウンロード： https://www.post.japanpost.jp/zipcode/download.html
+
+    5. 鉄道
+        railway：沿線 <-- idが0のデータは必須
+        station：駅 <-- idが0のデータは必須
+        transfer_station：乗換駅
+        
+        ※沿線・駅のデータは掲載契約している不動産ポータルの沿線・駅マスタ情報や下記のサイトなどを参考にしてください。
+            駅データ.jp： https://ekidata.jp/
+        
+        ※transfer_stationには、沿線が交差して同じ場所にある駅（乗り換え可能な駅）を登録します。
+          対象の駅に対しての乗り換え可能な駅を登録するため、乗換駅は双方向で登録する必要があります。
+
+
+    ■ 利用者固有の初期データの準備
+    下記のテーブルの初期データについては、利用者に合わせてCSVファイルを用意してください。
+    ※initial-data/data/sampleにあるCSVファイルを参考にしてください。
+
+    1. 部署・スタッフ
+        department：部署 <-- idが0のデータは必須
+        staff：スタッフ <-- idが0のデータは必須
+
+    2. 物件オーナー
+        owner：オーナー <-- idが0のデータは必須
+
+    3. 賃貸管理業者
+        trader_group：賃貸管理業者グループ <-- idが0のデータは必須
+        trader：賃貸管理業者 <-- idが0のデータは必須
+
+        ※traderには利用部署単位で登録してください。利用部署が複数ある業者は同じtrader_groupに設定します。
+            例：
+                trader_group = アパアパ管理株式会社
+                trader = アパアパ管理1号店、アパアパ管理2号店、アパアパ管理3号店
+
+
+    ■ 入力補助用の初期データの登録
+    下記の入力補助用のテーブルはVacancyMGR（空室情報データ管理）より管理者権限のユーザにて登録してください。
+
+    1. 火災保険会社・保証会社
+        insurance_company：火災保険会社
+        guarantee_company：保証会社
+
+    2. 空室情報掲載情報の入力補助各種
+        vacancy_input_bike_parking：駐輪場
+        vacancy_input_cancel_notice：解約通知
+        vacancy_input_change_lock：鍵交換
+        vacancy_input_cleaning：退去時清掃
+        vacancy_input_document_price：契約時書類代
+        vacancy_input_electric：電気
+        vacancy_input_garage：駐車場
+        vacancy_input_gas：ガス
+        vacancy_input_guarantee：保証会社
+        vacancy_input_guarantor_limit：保証人極度額
+        vacancy_input_insurance：火災保険
+        vacancy_input_inetenet：インターネット
+        vacancy_input_payment：賃料支払い
+        vacancy_input_portal：ポータル掲載
+        vacancy_input_renewal_charge：更新事務手数料
+        vacancy_input_short_cancel：短期解約
+        vacancy_input_water：水道
+
+
+    ■ 空室情報掲載用データの登録
+    下記の空室情報掲載用情報のテーブルはVacancyMGR（空室情報データ管理）より管理者権限のユーザにて登録してください。
+
+    1. 空室情報の掲載テーマ（オススメ、〇〇特集等）
+        vacancy_theme：空室情報テーマ
+
+
+
+
+【利用者別初期データの各CSVファイルのレコードレイアウト】
+    ※各CSVファイルはデータは"（ダブルクォーテーション）括りのカンマ区切りとします。
+    ※各CSVファイルはデータヘッダーに項目名の一覧を記述します。
+    ※各CSVファイルはPostgreSQLのpsqlにて下記のコマンドで取り込まれることを想定しています。
+        \copy [テーブル名] ([項目リスト]) from [CSVファイルパス] with csv header;
+
+    ■ city.csv : 市区町村 <-- idが0のデータは必須
+    （データヘッダー）
+        "id","name","pref_id","priority","lat","lng","is_trading_area","is_stopped"
+    （項目）
+        id: 市区町村ID
+        name: 市区町村名
+        pref_id：都道府県ID
+        lat: 中心緯度（世界測地系：0も可）
+        lat: 中心経度（世界測地系：0も可）
+        is_trading_area: 商圏フラグ（物件取扱いがある市区町村ならTRUE）
+        is_stoped: 停止フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","不明","0","99999999","0","0","FALSE","TRUE"
+
+    ■ area.csv : エリア <-- idが0のデータは必須
+    （データヘッダー）
+        "id","name","kana","pref_id","lat","lng","is_stopped"
+    （項目）
+        id: エリアID
+        name: エリア名
+        kana： エリア名カナ
+        pref_id：都道府県ID
+        lat: 中心緯度（世界測地系：0も可）
+        lat: 中心経度（世界測地系：0も可）
+        is_stoped: 停止フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","不明","フメイ","0","0","0","TRUE"
+
+    ■ city_area.csv : 市区町村とエリアの紐付け情報
+    （データヘッダー）
+        "id","city_id","area_id","is_stopped"
+    （項目）
+        id: 市区町村エリアID（連番）
+        city_id: 市区町村ID
+        area_id: エリアID
+        is_stoped: 停止フラグ（原則はFALSE）
+
+    ■ elementary_school.csv : 小学校区 <-- idが0のデータは必須
+    （データヘッダー）
+        "id","pref_id","name","kana","lat","lng","is_stopped"
+    （項目）
+        id: 小学校区ID
+        pref_id：都道府県ID
+        name: 小学校区名
+        kana： 小学校区名カナ
+        lat: 緯度（世界測地系：0も可）
+        lat: 経度（世界測地系：0も可）
+        is_stoped: 停止フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","0","不明","フメイ","0","0","TRUE"
+
+    ■ junior_high_school.csv : 中学校区 <-- idが0のデータは必須
+    （データヘッダー）
+        "id","pref_id","name","kana","lat","lng","is_stopped"
+    （項目）
+        id: 中学校区ID
+        pref_id：都道府県ID
+        name: 中学校区名
+        kana： 中学校区名カナ
+        lat: 緯度（世界測地系：0も可）
+        lat: 経度（世界測地系：0も可）
+        is_stoped: 停止フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","0","不明","フメイ","0","0","TRUE"
+
+    ■ city_elementary_school.csv : 市区町村と小学校区の紐付け情報
+    （データヘッダー）
+        "id","city_id","school_id","is_stopped"
+    （項目）
+        id: 市区町村小学校区ID（連番）
+        city_id: 市区町村ID
+        school_id: 小学校区ID
+        is_stoped: 停止フラグ（原則はFALSE）
+
+    ■ city_junior_high_school.csv : 市区町村と中学校区の紐付け情報
+    （データヘッダー）
+        "id","city_id","school_id","is_stopped"
+    （項目）
+        id: 市区町村小学校区ID（連番）
+        city_id: 市区町村ID
+        school_id: 中学校区ID
+        is_stoped: 停止フラグ（原則はFALSE）
+
+    ■ landmark.csv : ランドマーク（大学・短大・専門学校・施設など） <-- idが0のデータは必須
+    （データヘッダー）
+        "id","landmark_type_id","name","kana","short_name","lat","lng","priority","is_stopped"
+    （項目）
+        id: ランドマークID
+        landmark_type_id： ランドマーク種別ID
+        name: ランドマーク名
+        kana: ランドマーク名カナ
+        short_name: ランドマーク名略称
+        lat: 緯度（世界測地系：0も可）
+        lat: 経度（世界測地系：0も可）
+        priority: 表示の優先順
+        is_stoped: 停止フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","0","不明","フメイ","不明","0","0","99999999","TRUE"
+
+    ■ postal_code.csv : 郵便番号と住所 <-- idが0のデータは必須
+    （データヘッダー）
+        "pref_id","city_id","postal_code","pref_kana","city_kana","town_kana","pref_name","city_name","town_name"
+    （項目）
+        pref_id：都道府県ID
+        city_id: 市区町村ID
+        postal_code: 郵便番号
+        pref_kana: 都道府県名カナ
+        city_kana: 市町村名カナ
+        town_name: 町域名カナ
+        pref_name: 都道府県名
+        city_name: 市区町村名
+        town_name: 町域名
+    （ID:0のレコード例）
+        "0","0","000-0000","フメイ","フメイ","フメイ","不明","不明","不明"
+
+    ■ railway.csv : 沿線 <-- idが0のデータは必須
+    （データヘッダー）
+        "id","name","short_name","priority","is_trading","is_stopped"
+    （項目）
+        id: 沿線ID
+        name: 沿線名
+        short_name: 沿線名略称
+        priority: 表示の優先順
+        is_trading: 商取引フラグ（物件取扱いがある沿線ならTRUE）
+        is_stoped: 停止フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","不明","不明","9999","FALSE","FALSE"
+
+    ■ station.csv : 駅 <-- idが0のデータは必須
+    （データヘッダー）
+        "id","railway_id","name","priority","is_trading","is_stopped"
+    （項目）
+        id: 駅ID
+        railway_id: 沿線ID
+        name: 駅名
+        priority: 表示の優先順
+        is_trading: 商取引フラグ（物件取扱いがある駅ならTRUE）
+        is_stoped: 停止フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","0","不明","9999","FALSE","FALSE"
+
+    ■ transfer_station.csv : 乗換駅
+    （データヘッダー）
+        "id","station_id","transfer_station_id","is_stopped"
+    （項目）
+        id: 乗換駅ID（連番）
+        station_id: 乗り換え元の駅ID
+        transfer_station_id: 乗り換え先の駅ID
+        is_stoped: 停止フラグ（原則はFALSE）
+
+    ■ department.csv : 部署 <-- idが0のデータは必須
+    （データヘッダー）
+        "id","department_name","priority","is_publish_vacancy","created_at","is_stopped","is_deleted"
+    （項目）
+        id: 部署ID
+        department_name: 部署名
+        priority: 表示の優先順
+        is_publish_vacancy: 空室情報公開フラグ（空室情報に表示させるならTRUE）
+        created_at: 登録日時（YYYY-MM-DD HH24:MI:SS の形式）
+        is_stopped: 停止フラグ（原則はFALSE）
+        is_deleted: 削除フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","不明","99999","FALSE","2020-01-01 12:00:00","TRUE","FALSE"
+
+    ■ staff.csv : スタッフ <-- idが0のデータは必須
+    （データヘッダー）
+        "id","department_id","first_name","last_name","priority","is_pm_staff","is_publish_vacancy","created_at","is_stopped","is_deleted"
+    （項目）
+        id: スタッフID
+        department_id: 部署ID
+        first_name: 氏名（名）
+        last_name: 氏名（姓）
+        priority: 表示の優先順
+        is_pm_staff: 管理担当フラグ（管理担当ならTRUE）
+        is_publish_vacancy: 空室情報公開フラグ（空室情報に表示させるならTRUE）
+        created_at: 登録日時（YYYY-MM-DD HH24:MI:SS の形式）
+        is_stopped: 停止フラグ（原則はFALSE）
+        is_deleted: 削除フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","0","未入力","不明","999999","FALSE","FALSE","2020-01-01 12:00:00","TRUE","FALSE"
+
+    ■ owner.csv : オーナー <-- idが0のデータは必須
+    （データヘッダー）
+        "id","owner_name","owner_kana","is_corporation","staff_id","created_at","created_user_id","updated_at","updated_user_id","is_stopped","is_deleted"
+    （項目）
+        id: オーナーID
+        owner_name: オーナー名
+        owner_kana: オーナー名カナ
+        is_corporation: 法人フラグ（オーナーが法人ならTRUE）
+        staff_id: 担当スタッフID（0:未入力）
+        created_at: 登録日時（YYYY-MM-DD HH24:MI:SS の形式）
+        created_user_id: 登録ユーザID（1:rootユーザのID）
+        updated_at: 更新日時（YYYY-MM-DD HH24:MI:SS の形式）
+        updated_user_id: 更新ユーザID（1:rootユーザのID）
+        is_stopped: 停止フラグ（原則はFALSE）
+        is_deleted: 削除フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","未登録","ミトウロク","FALSE","0","2020-01-01 12:00:00","1","2020-01-01 12:00:00","1","TRUE","FALSE"
+
+    ■ trader_group.csv : 賃貸管理業者グループ <-- idが0のデータは必須
+    （データヘッダー）
+        "id","trader_group_name","trader_group_kana","created_at","created_user_id","updated_at","updated_user_id","is_stopped","is_deleted"
+    （項目）
+        id: 賃貸管理業者グループID
+        trader_group_name: 賃貸管理業者グループ名
+        trader_group_kana: 賃貸管理業者グループ名カナ
+        created_at: 登録日時（YYYY-MM-DD HH24:MI:SS の形式）
+        created_user_id: 登録ユーザID（1:rootユーザのID）
+        updated_at: 更新日時（YYYY-MM-DD HH24:MI:SS の形式）
+        updated_user_id: 更新ユーザID（1:rootユーザのID）
+        is_stopped: 停止フラグ（原則はFALSE）
+        is_deleted: 削除フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","未登録","ミトウロク","2020-01-01 12:00:00","1","2020-01-01 12:00:00","1","TRUE","FALSE"
+
+    ■ trader.csv : 賃貸管理業者 <-- idが0のデータは必須
+    （データヘッダー）
+        "id","trader_group_id","trader_name","trader_kana","no_trading","no_portal","created_at","created_user_id","updated_at","updated_user_id","is_stopped","is_deleted"
+    （項目）
+        id: 賃貸管理業者グループID
+        trader_name: 賃貸管理業者名
+        trader_kana: 賃貸管理業者名カナ
+        no_trading: 取引不可フラグ
+        no_potal: ポータル掲載不可フラグ
+        created_at: 登録日時（YYYY-MM-DD HH24:MI:SS の形式）
+        created_user_id: 登録ユーザID（1:rootユーザのID）
+        updated_at: 更新日時（YYYY-MM-DD HH24:MI:SS の形式）
+        updated_user_id: 更新ユーザID（1:rootユーザのID）
+        is_stopped: 停止フラグ（原則はFALSE）
+        is_deleted: 削除フラグ（原則はFALSE）
+    （ID:0のレコード例）
+        "0","0","未登録","ミトウロク","TRUE","TRUE","2020-01-01 12:00:00","1","2020-01-01 12:00:00","1","TRUE","FALSE"
+
+
+
