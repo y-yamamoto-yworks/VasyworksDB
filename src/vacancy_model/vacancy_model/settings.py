@@ -85,8 +85,8 @@ AUTH_USER_MODEL = 'rent_db.User'
 # CSRF settings
 CSRF_TRUSTED_ORIGINS = [
     # 公開用
-    # 'https://vasyworks-model.yworks.net',
-    # 'http://vasyworks-model.yworks.net',
+    # 'https://vasyworks-model.hogehoge.net',
+    # 'http://vasyworks-model.hogehoge.net',
 
     # 開発用
     'http://localhost:8000',
