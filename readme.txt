@@ -10,6 +10,9 @@ Vasyworks:無料で使えるオープンソースの賃貸空室情報システ�
 https://vasyworks.yworks.net
 --
 
+動作の確認ができるDockerのテスト環境もご用意しています。
+https://github.com/y-yamamoto-yworks/Vasyworks-Docker
+
 2.VasyworksDB（データベース構築プロジェクト）について
 VasyworksDBはVasyworksのデータベースを構築、管理するためのプロジェクトです。DBMSにはPostgreSQLを使用します。Vasyworksのデータベースへの項目追加等の変更もVasyworksDBを利用します。
 
