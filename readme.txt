@@ -17,7 +17,7 @@ https://github.com/y-yamamoto-yworks/Vasyworks-Docker
 VasyworksDBはVasyworksのデータベースを構築、管理するためのプロジェクトです。DBMSにはPostgreSQLを使用します。Vasyworksのデータベースへの項目追加等の変更もVasyworksDBを利用します。
 
 3.VasyworksDBのライセンスについて
-VasyworksDBのソースコードおよびデータベース設計は山本 泰弘の著作物として、GLPv3のライセンス条件の下で利用できます。
+VasyworksDBのソースコードおよびデータベース設計は山本 泰弘の著作物として、AGPLv3のライセンス条件の下で利用できます。
 
 4.動作環境について
 開発環境は下記の通りです。
