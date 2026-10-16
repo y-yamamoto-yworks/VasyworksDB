@@ -11,7 +11,7 @@ https://vasyworks.yworks.net
 VasyworksDB is a project to build and manage the database of Vasyworks. PostgreSQL is used as the DBMS, and changes such as adding items to the database of Vasyworks are also made using VasyworksDB.
 
 3.About the license of VasyworksDB
-The source code and database design of VasyworksDB is the copyrighted work of Yasuhiro Yamamoto, and can be used under the terms of the GLPv3 license.
+The source code and database design of VasyworksDB is the copyrighted work of Yasuhiro Yamamoto, and can be used under the terms of the AGPLv3 license.
 
 About the operating environment
 The development environment is as follows
