@@ -80,7 +80,7 @@ class VacancyUser(AbstractBaseUser, PermissionsMixin):
         self.email = self.__class__.objects.normalize_email(self.email)
 
     def get_full_name(self):
-        return display_name
+        return self.display_name
 
     def get_short_name(self):
         return self.display_name
